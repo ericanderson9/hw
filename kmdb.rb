@@ -278,8 +278,8 @@ puts ""
 all_roles = Role.all
 
 for role in all_roles
-    title = movie["title"]
-    actor = actor["name"]
+    # title = movie["title"]
+    # actor = actor["name"]
     role = role["character_name"]
-    puts "#{title}#{actor}#{role}"
+    puts "#{role}"
 end
