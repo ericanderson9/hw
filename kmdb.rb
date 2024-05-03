@@ -278,8 +278,14 @@ puts ""
 all_roles = Role.all
 
 for role in all_roles
-    # title = movie["title"]
-    # actor = actor["name"]
-    role = role["character_name"]
-    puts "#{role}"
+    selected_movie = Movie.where({"id" => role["movie_id"]})
+    for movie in selected_movie
+        selected_actor = Actor.where({"id" => role["actor_id"]})
+        for actor in selected_actor
+            title = movie["title"]
+            actor = actor["name"]
+            role = role["character_name"]
+            puts "#{title} #{actor} #{role}"
+        end
+    end
 end
